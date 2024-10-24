@@ -86,7 +86,7 @@ Scripts a01-a07 are needed for the purpose of running the pipeline. Scripts a08 
   >
   > Annotated with gnomAD frequencies.
 
-### scripts/a09_compound_hets.r
+### a09_compound_hets.r
   > Loads the carrier data saved in a08 and checks if any of the carriers carry two different variants for the same gene (compound hets).
 
 
