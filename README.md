@@ -4,7 +4,7 @@ If using these scripts or parts of these scripts please cite XXX
 
 Many thanks to Ashwini Shanmugam for helping to put this documentation in place.
 
-## Pipeline description
+# Pipeline description
 
 This pipeline was originally built to extract carriers of ACMG actionable variant carriers from the exome sequencing data, but can be used to extract carriers of any genes. 
 
@@ -16,7 +16,7 @@ The pipeline was built to run one gene at a time, enabling parallelisation of th
 Scripts a01-a07 are needed for the purpose of running the pipeline. Scripts a08 and a09 were used to summarise and further annotate the data for the paper.
 
 
-## Brief description of scripts: 
+# Brief description of scripts: 
 
 ### a01_extract_gene_variants_clinvar.sh
   > Splits the ClinVar file into per-gene files for easier handling.
@@ -88,6 +88,16 @@ Scripts a01-a07 are needed for the purpose of running the pipeline. Scripts a08 
 
 ### a09_compound_hets.r
   > Loads the carrier data saved in a08 and checks if any of the carriers carry two different variants for the same gene (compound hets).
+
+# Requirements 
+
+## Data
+
+> The following data are needed to run this pipeline:
+> 1. genetic data - whole exome or genome sequencing data.
+> 2. ClinVar data - a file containing annotations of pathogenicity of variants. ClinVar database is regularly updated, so it’s important to keep a record of the version of the data and the date of accession, since variant’s pathogenicity and star status can be significantly changed between two data releases. Location of the file: data/clinvar/variants_summary.txt.gz The file can be downloaded from: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/
+> 3. list of all variants in the genetic data annotated with the following info: chromosome, position, reference allele, alternate allele, functional consequence
+> 4. List of genes of interest - This list needs to contain the HUGO name of the gene, each gene in one row and should not contain the header. 
 
 
 
